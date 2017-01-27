@@ -1,0 +1,18 @@
+{
+  "name": "segunda-mano",
+  "description": "Demo on how to use segunda mano REST Api",
+  "main": "index.js",
+  "authors": [
+    "Angel Carvajal"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/angeldaniel-adcm/segunda-mano",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

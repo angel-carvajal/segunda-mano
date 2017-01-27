@@ -1,0 +1,38 @@
+{
+  "name": "segunda-mano",
+  "version": "1.0.0",
+  "description": "Demo on how to use segunda mano REST Api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angeldaniel-adcm/segunda-mano.git"
+  },
+  "author": "Angel Carvajal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angeldaniel-adcm/segunda-mano/issues"
+  },
+  "homepage": "https://github.com/angeldaniel-adcm/segunda-mano#readme",
+  "dependencies": {
+    "angular-ui-router": "^0.4.2",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babelify": "^7.3.0",
+    "body-parser": "^1.16.0",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^6.0.0",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-express-server": "^0.5.3",
+    "grunt-jscs": "^3.0.1",
+    "jscs-stylish": "^0.3.1",
+    "jshint-stylish": "^2.2.1"
+  }
+}
