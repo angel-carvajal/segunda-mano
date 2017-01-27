@@ -142,8 +142,8 @@ module.exports = function(grunt) {
 	});
 
 	// Default task.
-	grunt.registerTask('default', ['browserify:client', 'babel', 'express:dev', 'watch']);
-	grunt.registerTask('server', ['browserify:client', 'babel', 'express:dev', 'watch']);
+	grunt.registerTask('default', ['jshint', 'jscs', 'browserify:client', 'babel', 'express:dev', 'watch']);
+	grunt.registerTask('server', ['jshint', 'jscs', 'browserify:client', 'babel', 'express:dev', 'watch']);
 	//grunt.registerTask('vendor', ['browserify:vendor']); Duo an error on grunt-browserfy I'm not able to properly compile all dependencies.
 	//Bug already reported https://github.com/jmreidy/grunt-browserify/issues/390
 };
