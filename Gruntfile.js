@@ -47,9 +47,19 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		sass: {
+			options: {
+				sourceMap: true
+			},
+			dist: {
+				files: {
+					'src/main.css': 'app/styles/main.scss'
+				}
+			}
+		},
 		jshint: {
 			all: {
-				src: [],
+				src: ['Gruntfile.js', 'app/**/*.js'],
 				options: {
 					bitwise: true,
 					curly: true,
@@ -118,9 +128,10 @@ module.exports = function(grunt) {
 				files: [
 					'Gruntfile.js', 
 					'app/**/*.js',
-					'scripts/**/*.js'
+					'scripts/**/*.js',
+					'app/**/*.scss'
 				],
-				tasks: ['jscs', 'jshint', 'browserify:client', 'express:dev'],
+				tasks: ['jscs', 'jshint', 'sass', 'browserify:client', 'express:dev'],
 				options: {
 					nospawn: true
 				}
@@ -131,19 +142,23 @@ module.exports = function(grunt) {
 	// These plugins provide necessary tasks.
 	grunt.loadNpmTasks('grunt-babel');
 	grunt.loadNpmTasks('grunt-browserify');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-express-server');
 	grunt.loadNpmTasks('grunt-jscs');
 	grunt.event.on('watch', (action, filepath) => {
-		grunt.config(['jshint', 'all', 'src'], [filepath]);
-		grunt.config(['jscs', 'src'], [filepath]);
+		let extension = filepath.split('.');
+		if ('scss' !== extension[1]) {
+			grunt.config(['jshint', 'all', 'src'], [filepath]);
+			grunt.config(['jscs', 'src'], [filepath]);
+		}
 	});
 
 	// Default task.
-	grunt.registerTask('default', ['jshint', 'jscs', 'browserify:client', 'babel', 'express:dev', 'watch']);
-	grunt.registerTask('server', ['jshint', 'jscs', 'browserify:client', 'babel', 'express:dev', 'watch']);
+	grunt.registerTask('default', ['jshint', 'jscs', 'sass', 'browserify:client', 'babel', 'express:dev', 'watch']);
+	grunt.registerTask('server', ['jshint', 'jscs', 'sass', 'browserify:client', 'babel', 'express:dev', 'watch']);
 	//grunt.registerTask('vendor', ['browserify:vendor']); Duo an error on grunt-browserfy I'm not able to properly compile all dependencies.
 	//Bug already reported https://github.com/jmreidy/grunt-browserify/issues/390
 };
