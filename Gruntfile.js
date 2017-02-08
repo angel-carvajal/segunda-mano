@@ -89,7 +89,7 @@ module.exports = function(grunt) {
 				requireCurlyBraces: true,
 				requireArrowFunctions: true,
 				requireAnonymousFunctions: false,
-				requireCamelCaseOrUpperCaseIdentifiers: {strict: false},
+				requireCamelCaseOrUpperCaseIdentifiers: false,
 				requireBlocksOnNewline: true,
 				requireEarlyReturn: true,
 				requireKeywordsOnNewLine: ['else', 'let', 'const', 'catch', 'if', 'do', 'for', 'while'],
