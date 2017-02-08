@@ -10,3 +10,12 @@ html, body {
 	background-color: white;
 	font-family: $font-family;
 }
+
+.ad-card {
+	.card-image {
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		height: 100px;
+	}
+}

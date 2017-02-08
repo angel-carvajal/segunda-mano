@@ -1,1 +1,4 @@
 <h3>Results template</h3>
+<div flex-container="row" flex-column="12" ng-repeat="adsRow in ads">
+	<ad-card ng-repeat="ad in adsRow" ad="ad.ad"></ad-card>
+</div>
